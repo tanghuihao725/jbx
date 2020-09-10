@@ -1,31 +1,14 @@
 <template>
   <div id="app">
-    <Header/>
-    <div class="content">
-      <Nav />
-      <router-view/>
-    </div>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header'
-import Nav from '@/components/Nav'
 
-export default {
-  components:{
-    Header, Nav
-  }
-}
 </script>
 
 
-<style lang="less" scoped>
-.content{
-  display: flex;
-  height: 80vh;
-}
-</style>
 
 <style>
 * {
