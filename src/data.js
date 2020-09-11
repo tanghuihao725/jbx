@@ -37,10 +37,12 @@ export default {
             ]
         },
         {
-            title: '权限管理',
-            path: '/system/auth-manager',
+            title: '管理',
             showType: 'manager',
-            children: []
+            children: [
+                { title: '权限管理', path: '/system/auth-manager'},
+                { title: '用户列表', path: '/system/user-list'},
+            ]
         },
     ],
     spaceData: [

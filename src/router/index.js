@@ -30,6 +30,11 @@ const routes = [
         component: () => import('../views/Home/AuthManager.vue')
       },
       {
+        path: '/system/user-list',
+        name: '用户列表',
+        component: () => import('../views/Home/UserList.vue')
+      },
+      {
         path: '/system/',
         name: '欢迎页',
         component: () => import('../views/Home/Welcome.vue')
