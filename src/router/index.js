@@ -25,6 +25,11 @@ const routes = [
         component: () => import('../views/Home/Auth.vue')
       },
       {
+        path: '/system/auth-manager',
+        name: '权限管理2',
+        component: () => import('../views/Home/AuthManager.vue')
+      },
+      {
         path: '/system/',
         name: '欢迎页',
         component: () => import('../views/Home/Welcome.vue')

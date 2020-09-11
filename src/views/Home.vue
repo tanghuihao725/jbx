@@ -15,7 +15,6 @@ import { mapGetters } from 'vuex'
 
 export default {
   beforeMount(){
-    console.log(this.user)
     if(!this.user.name){
       this.$router.push('/login')
     }

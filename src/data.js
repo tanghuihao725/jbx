@@ -25,15 +25,23 @@ export default {
         {
             title: '权限服务',
             path: '/system/auth',
+            showType: 'common',
             children: []
         },
         {
             title: '数据服务',
+            showType: 'common',
             children: [
                 { title: '上传数据', path: '/system/data-upload'},
                 { title: '数据列表', path: '/system/data-list' }
             ]
-        }
+        },
+        {
+            title: '权限管理',
+            path: '/system/auth-manager',
+            showType: 'manager',
+            children: []
+        },
     ],
     spaceData: [
         {

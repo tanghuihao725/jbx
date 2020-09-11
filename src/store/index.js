@@ -28,6 +28,17 @@ export default new Vuex.Store({
     applyAuth: (state, { authId }) => {
       const { name, isManager } = state.user
       state.userData[isManager?"manager":"commonUsers"][name].applyingAuth[state.spaceIndex].push(authId)
+    },
+    // 管理员权限操作
+    withdrawAuth: (state, { username, authId, type='auth' }) => {
+      const index = state.userData.commonUsers[username][type][state.spaceIndex].indexOf(authId)
+      state.userData.commonUsers[username][type][state.spaceIndex].splice(index, 1)
+    },
+    passAuth:(state, { username, authId }) => {
+      const type = 'applyingAuth'
+      const index = state.userData.commonUsers[username][type][state.spaceIndex].indexOf(authId)
+      state.userData.commonUsers[username][type][state.spaceIndex].splice(index, 1)
+      state.userData.commonUsers[username].auth[state.spaceIndex].push(authId)
     }
   },
   actions: {
@@ -44,9 +55,6 @@ export default new Vuex.Store({
       })
       return Promise.resolve()
     },
-    applyAuth: ({ commit }, { authId }) => {
-
-    }
   },
   modules: {
   }

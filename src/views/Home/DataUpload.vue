@@ -10,7 +10,7 @@
           ref="upload"
           class="upload-demo"
           drag
-           :auto-upload="false"
+          :auto-upload="false"
           action="https://jsonplaceholder.typicode.com/posts/"
         >
           <i class="el-icon-upload"></i>
@@ -22,9 +22,14 @@
         </el-upload>
       </el-form-item>
 
+      <!-- 标题 -->
+      <el-form-item label="标题:" style="width:90%;" >
+        <el-input placeholder="请输入标题" v-model="title"></el-input>
+      </el-form-item>
+
       <!-- 策略选择 -->
       <p style="textAlign: left; margin: 10px 0">请选择策略：</p>
-      <el-form-item v-for="index in selected.length" :key="index">    
+      <el-form-item v-for="index in selected.length" :key="index">
         <div class="auth-unit">
           <el-tag
             class="tag"
@@ -67,6 +72,7 @@ export default {
     return {
       selected: [],
       loading: false,
+      title: "",
     };
   },
   mounted() {
@@ -125,7 +131,7 @@ export default {
 
   .auth-unit {
     text-align: left;
-    border: 1px dotted rgba(255,68,0,0.5);
+    border: 1px dotted rgba(255, 68, 0, 0.5);
     .tag {
       margin: 10px 5px;
       cursor: pointer;

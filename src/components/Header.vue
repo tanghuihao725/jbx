@@ -5,6 +5,7 @@
       <span class="title">数据共享平台</span>
     </div>
     <div class="right-area">
+      <span v-if="user.isManager" style="color:#f40;marginRight:15px">[管理员]</span>
       <span>用户名：{{ user.name || '未登录'}}</span>
       <div class="space">
         <el-select v-model="value" @change="handleSpaceChange">
@@ -28,6 +29,9 @@ export default {
     return {
       value: 0,
     };
+  },
+  mounted(){
+    this.setSpaceIndex({ spaceIndex: 0 })
   },
   computed: {
     ...mapGetters(["user", "spaceIndex", "spaceData"]),
